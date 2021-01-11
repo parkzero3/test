@@ -12,7 +12,7 @@ public class BreakeContinueTest {
 		
 			for(count =1 ; count <=9; count++) {
 				System.out.println(dan+"X"+count+"=" +dan*count);
-				if ( count >= dan) break;
+				if ( count >= dan) break; //자기를 감싸고있는 하나의 포문만 빠져나감 ( 카운트가 단보다 크거나 같으면 브레이크)
 			}
 			System.out.println();
 		}

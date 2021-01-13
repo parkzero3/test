@@ -1,26 +1,61 @@
 package hiding;
+import java.util.Calendar;
 
 public class MyDate {
 
 	private int day;
 	private int month;
 	private int year;
-	
 	private boolean isValid = true;
+	
+	public MyDate(int day, int month, int year) {
+		setYear(year);
+		setMonth(month);
+		setDay(day);
+	}
 	
 	public int getDay() {
 		return day;
 	}
 
-
 	public void setDay(int day) {
-		if(day < 1 || day > 31) {
+		switch(month) {
+		case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+			if(day<0 || day > 31) {
+				isValid = false;
+			}else {
+				this.day = day;
+			}
+			break;
+		case 4: case 6: case 9: case 11:
+			if(day<0 || day >30) {
+				isValid = false;
+			}else {
+				this.day= day;
+			}
+			break;
+		case 2:
+			if (( ( year % 4 ==0 &&  year % 100 !=0 ) || year % 400 ==0)){  //윤년인 경우
+				if (day <0 || day >29) {
+					isValid = false;
+				} 
+				else {
+					this.day = day;
+				}
+			}
+			else {
+				if (day <0 || day >28) {
+					isValid = false;
+				} 
+				else {
+					this.day = day;
+				}
+			}
+			break;
+		default:
 			isValid = false;
-		}else {
-		this.day = day;
-		}
 	}
-	
+}
 	public int getMonth() {
 		return month;
 	}
@@ -41,15 +76,19 @@ public class MyDate {
 
 
 	public void setYear(int year) {
-		this.year = year;
-	}
-
-
-	public void showDate() {
-		if(isValid ) {
-			System.out.println(year + "년" + month +"월" + day +"일 입니다.");
+		if(year > Calendar.getInstance().get(Calendar.YEAR)) {
+			isValid = false;
 		}else {
-			System.out.println("유효하지 않은 날짜 입니다.");
+			this.year= year;
+		}
+	}
+	
+	public String isValid() {
+		if(isValid == true) {
+			return "유효한 날짜입니다.";
+					
+		}else {
+			return "유효하지 않은 날짜입니다.";
 		}
 	}
 }

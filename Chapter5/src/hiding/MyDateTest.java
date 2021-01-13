@@ -4,13 +4,11 @@ public class MyDateTest {
 
 	public static void main(String[] args) {
 		
-		MyDate date = new MyDate();
+		MyDate date1 = new MyDate(32,2,2000);
+		System.out.println(date1.isValid());
+		MyDate date2 = new MyDate(2, 10, 2000);
+		System.out.println(date2.isValid());
 		
-		date.setYear(2021);
-		date.setMonth(12);
-		date.setDay(12);
-		
-		date.showDate();
 	}
 
 }

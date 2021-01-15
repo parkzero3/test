@@ -24,9 +24,16 @@ public class VIPCustomer extends Customer{
 		
 		System.out.println("VIPCustomer(int,String) 호출됨");
 	}
+
+	@Override
+	public int calcPrice(int price) {
+		bonusPoint += price *bonusRatio;
+		return price - (int)(price * salesRatio);
+		
+	}
 	
 	//protected : 외부 클래스에는 private 으로 하위클래스에서 public 의 기능을 구현한 키워드 
 	// 상위클래스에 protected로 선언된 변수나 메서드는 다른 외부 클래스에서는 사용할 수 없지만 하위 클래스에서는 사용가능.
 	
-	
+
 }

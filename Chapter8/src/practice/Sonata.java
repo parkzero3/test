@@ -1,0 +1,32 @@
+package practice;
+
+public class Sonata extends Car{
+
+	@Override
+	public void start() {
+		System.out.println("½î³ªÅ¸ ½Ãµ¿À» ÄÕ´Ï´Ù.");
+
+		
+	}
+
+	@Override
+	public void drive() {
+		System.out.println("½î³ªÅ¸ ÁÖÇàÀ» ÇÕ´Ï´Ù.");
+		
+	}
+
+	@Override
+	public void stop() {
+		System.out.println("½î³ªÅ¸ ¸ØÃä´Ï´Ù.");
+
+		
+	}
+
+	@Override
+	public void turnOff() {
+		System.out.println("½î³ªÅ¸ ½Ãµ¿À» ²ü´Ï´Ù.");
+
+		
+	}
+
+}

@@ -17,6 +17,7 @@ class MyStack{
 		}
 		return arrayStack.remove(len-1);
 	}
+	
 }
 
 public class Stack {
